@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="DefaultThemeColor">#009688</string>
+    <string name="TextOnDefaultThemeColor">#FFFFFF</string>
+    <string name="DefaultThemeColorShade1">#FFFFFF</string>
+    <string name="TextOnDefaultThemeColorShade1">#009688</string>
+</resources>

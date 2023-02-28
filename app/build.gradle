@@ -1,0 +1,43 @@
+plugins {
+	id 'com.android.application'
+}
+
+android {
+	compileSdkVersion 31
+	
+	useLibrary 'org.apache.http.legacy'
+	
+	defaultConfig {
+		applicationId "com.ts.code.editor"
+		minSdkVersion 21
+		targetSdkVersion 28
+		versionCode 1
+		versionName "20.1.2023 Beta1"
+	}
+	
+	buildTypes {
+		release {
+			minifyEnabled false
+			// proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+		debug {
+			minifyEnabled false
+			// proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+	packagingOptions{
+	  resources.excludes.add("license/*")
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation 'androidx.appcompat:appcompat:1.4.0'
+	implementation 'com.google.android.material:material:1.6.1'
+	implementation 'com.github.bumptech.glide:glide:4.12.0'
+	implementation 'com.google.code.gson:gson:2.8.7'
+	implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+	implementation 'io.github.Rosemoe.sora-editor:editor:0.14.0'
+	implementation 'io.github.Rosemoe.sora-editor:language-java:0.14.0'
+	implementation 'io.github.Rosemoe.sora-editor:language-textmate:0.14.0'
+}

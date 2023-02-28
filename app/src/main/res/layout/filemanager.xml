@@ -1,0 +1,85 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<LinearLayout
+			android:id="@+id/Main_LinearLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_weight="1"
+			android:background="?attr/colorPrimaryContainer">
+			<LinearLayout
+				android:id="@+id/Main_LinearLayout_Listview1_Backdrop"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_weight="1">
+				<LinearLayout
+					android:id="@+id/linear1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:orientation="vertical">
+					<ImageView
+						android:id="@+id/imageview1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/setting_48px"
+						android:scaleType="center"
+						android:tint="?attr/colorPrimary" />
+				</LinearLayout>
+				<ListView
+					android:id="@+id/Listview1_Backdrop_LinearLayout_Listview1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:dividerHeight="0dp"
+					android:divider="@null"
+					android:choiceMode="none"
+					android:layout_weight="1" />
+			</LinearLayout>
+			<Button
+				android:id="@+id/Main_Button_UseThisFolder"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:text="Use this folder"
+				tools:replace="android:textColor,android:textSize,android:padding"
+				style="@style/Widget.Material3.Button" />
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/Error_LinearLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical"
+			android:layout_weight="1"
+			android:background="?attr/colorPrimaryContainer">
+			<TextView
+				android:id="@+id/Error_TextView_AccessDenied"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="Read access denied to this path"
+				android:layout_gravity="center_horizontal|center_vertical"
+				tools:replace="android:padding,android:textColor,android:textSize"
+				android:textColor="?attr/colorPrimary" />
+		</LinearLayout>
+	</LinearLayout>
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/_fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:layout_gravity="right|bottom"
+		app:srcCompat="@drawable/ic_add_white" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

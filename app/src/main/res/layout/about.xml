@@ -1,0 +1,120 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/_app_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/MaterialTheme">
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/_toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:popupTheme="@style/MaterialTheme" />
+	</com.google.android.material.appbar.AppBarLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+		<ScrollView
+			android:id="@+id/vscroll1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="?attr/colorPrimaryContainer">
+			<LinearLayout
+				android:id="@+id/linear1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/textview1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="TS Code Editor"
+					android:textStyle="bold"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="TS Code editor is an Android code editor.\nIt does support Sora Code editor and Ace Code Editor.This app is created in Sketchware pro using Sora Code editor and Ace library."
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Discord"
+					android:textStyle="bold"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Join our discord server to chat,get help,report bug with us."
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<ImageView
+					android:id="@+id/imageview1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:src="@drawable/default_image"
+					android:scaleType="center" />
+				<TextView
+					android:id="@+id/textview5"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Licenses"
+					android:textStyle="bold"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview7"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Ajax.org B.V.(Ace Code Editor)"
+					android:textStyle="bold"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview8"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					android:text="Sora Code Editor"
+					android:textStyle="bold"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+				<TextView
+					android:id="@+id/textview10"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="8dp"
+					tools:replace="android:textSize,android:textColor"
+					android:textColor="?attr/colorPrimary" />
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="light">
+        <item>#303031</item>
+        <item>#FFFFFF</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="dark">
+        <item>#FFFFFF</item>
+        <item>#303031</item>
+        <item>true</item>
+    </string-array>
+</resources>

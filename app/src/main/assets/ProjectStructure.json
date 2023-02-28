@@ -1,0 +1,79 @@
+{
+  "Activity": [
+    {
+      "Name": "Main",
+      "Layout": "main.xml",
+      "Activity": "MainActivity",
+      "Class": [
+        {
+          "Name": "MainActivity",
+          "Extend": "AppCompatActivity",
+          "Intent": {
+            "Extra": []
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Filemanager",
+      "Layout": "filemanager.xml",
+      "Activity": "FilemanagerActivity",
+      "Class": [
+        {
+          "Name": "FilemanagerActivity",
+          "Extend": "AppCompatActivity",
+          "Intent": {
+            "Extra": [
+              {
+                "key": "path",
+                "required": "true",
+                "Usage": "Path for folder to show as list",
+                "Value": [
+                  "Path"
+                ]
+              },
+              {
+                "key": "lastPath",
+                "required": "If want",
+                "Usage": "Last path that user should not crossed back by user",
+                "Value": [
+                  "Path"
+                ]
+              },
+              {
+                "key": "for",
+                "required": "Not if value is no",
+                "Usage": "Used to check whether need to return result",
+                "Value": [
+                  "result"
+                ]
+              },
+              {
+                "key": "type",
+                "required": true,
+                "Usage": "Used to define what we need to select",
+                "Value": [
+                  "project",
+                  "file",
+                  "folder"
+                ]
+              },
+              {
+                "key": "fileType",
+                "required": "Required when selected type = file",
+                "Usage": "Used to define which file we need to select",
+                "Value": [
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "Java",
+                  "XML"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
