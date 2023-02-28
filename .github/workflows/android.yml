@@ -46,4 +46,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: apk-editor-debug
-          path: app/build/outputs/apk/debug/*
+          path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload output-metadata
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-metadata
+          path: app/build/outputs/apk/debug/output-metadata.json
