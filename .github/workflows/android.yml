@@ -6,6 +6,8 @@ name: Android CI
 
 on:
   push:
+    branches:
+      - main
     paths:
       - '.github/workflows/android.yml'
       - 'app/**'
@@ -14,10 +16,13 @@ on:
       - 'gradlew'
       - 'settings.gradle'
   pull_request:
+    branches:
+      - main
     paths:
       - '.github/workflows/android.yml'
       - 'app/**'
       - 'gradle/**'
+      - 'build.gradle'
       - 'gradle.properties'
       - 'gradlew'
       - 'settings.gradle'
