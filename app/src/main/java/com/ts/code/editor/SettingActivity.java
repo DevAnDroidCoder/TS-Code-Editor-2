@@ -83,42 +83,6 @@ public class SettingActivity extends AppCompatActivity {
 		imageview1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
-				PopupMenu popupid = new PopupMenu(SettingActivity.this, imageview1);
-				
-				//Main activity.this will be your activity name
-				
-				Menu menu = popupid.getMenu();
-				
-				menu.add("Desktop mode");
-				
-				menu.add("Mobile mode");
-				
-				
-				
-				popupid.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
-						
-						@Override
-						
-						public boolean onMenuItemClick(MenuItem item){
-								
-								switch (item.getTitle().toString()){
-										
-										case "Desktop mode":
-										
-										break;
-										
-										case "Mobile mode":
-										
-										break;
-							        }
-								
-								return true;
-								
-						}
-						
-				});
-				
-				popupid.show();
 				
 			}
 		});

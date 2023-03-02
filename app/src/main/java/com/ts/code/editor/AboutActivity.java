@@ -19,7 +19,6 @@ import android.view.View.*;
 import android.view.animation.*;
 import android.webkit.*;
 import android.widget.*;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -52,7 +51,6 @@ public class AboutActivity extends AppCompatActivity {
 	private TextView textview2;
 	private TextView textview3;
 	private TextView textview4;
-	private ImageView imageview1;
 	private TextView textview5;
 	private TextView textview7;
 	private TextView textview6;
@@ -88,7 +86,6 @@ public class AboutActivity extends AppCompatActivity {
 		textview2 = findViewById(R.id.textview2);
 		textview3 = findViewById(R.id.textview3);
 		textview4 = findViewById(R.id.textview4);
-		imageview1 = findViewById(R.id.imageview1);
 		textview5 = findViewById(R.id.textview5);
 		textview7 = findViewById(R.id.textview7);
 		textview6 = findViewById(R.id.textview6);

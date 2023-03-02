@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.content.SharedPreferences;
 import android.content.Context;
 import android.Manifest;
+import android.util.TypedValue;
 
 public class TSDTheme {
 	public SharedPreferences theme;
@@ -18,11 +19,12 @@ public class TSDTheme {
 	public String[] themeList;
 	public String[] themeColors;
 	public Context c;
+    public static String Mcolor;
 	
 	//initialize 
 	public void initialize(SharedPreferences sp,Context _c){
 		theme = sp;
-        c = _c;
+		c = _c;
 	}
 	
 	//get theme list data
@@ -48,11 +50,11 @@ public class TSDTheme {
 		//Get theme data in variables
 		if(themeName.equals("light")){
 			themeColors = c.getResources().getStringArray(R.array.light);
-            isThemeColorsExists = true;
+			isThemeColorsExists = true;
 		}
 		if(themeName.equals("dark")){
 			themeColors = c.getResources().getStringArray(R.array.dark);
-            isThemeColorsExists = true;
+			isThemeColorsExists = true;
 		}
 		if(isThemeColorsExists){
 			PrimaryColor = themeColors[0];
@@ -67,11 +69,11 @@ public class TSDTheme {
 		//Get theme data in variables
 		if(themeName.equals("light")){
 			themeColors = c.getResources().getStringArray(R.array.light);
-            isThemeColorsExists = true;
+			isThemeColorsExists = true;
 		}
 		if(themeName.equals("dark")){
 			themeColors = c.getResources().getStringArray(R.array.dark);
-            isThemeColorsExists = true;
+			isThemeColorsExists = true;
 		}
 		
 		if(isThemeColorsExists){
@@ -79,5 +81,12 @@ public class TSDTheme {
 			SecondaryColor = themeColors[1];
 			isDarkTheme = Boolean.parseBoolean(themeColors[3]);
 		}
+	}
+	public static String getCurrentMaterialThemeColor(int resId,Context con){
+		TypedValue typedValue = new TypedValue();
+		con.getTheme().resolveAttribute(resId, typedValue, true);
+		int McolorInt = typedValue.data;
+		Mcolor = String.format("#%08X", (0xFFFFFFFF & McolorInt));
+		return Mcolor;
 	}
 }

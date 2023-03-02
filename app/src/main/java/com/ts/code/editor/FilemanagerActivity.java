@@ -392,11 +392,8 @@ _setTextColor(Main_Button_UseThisFolder, colorOnPrimary);
 _setBackground(colorOnSecondary, Error_LinearLayout);
 _setTextColor(Error_TextView_AccessDenied, colorOnSecondary);
 */
-		TypedValue typedValue = new TypedValue();
-		getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
-		int color = typedValue.data;
-		primaryColor = String.format("#%08X", (0xFFFFFFFF & color));
-		_StatusAndNavigation(primaryColor);
+		_StatusAndNavigation(TSDTheme.getCurrentMaterialThemeColor(R.attr.colorPrimary,FilemanagerActivity.this));
+		_RippleEffects(TSDTheme.getCurrentMaterialThemeColor(R.attr.colorPrimary,FilemanagerActivity.this), imageview1);
 	}
 	
 	
@@ -558,6 +555,13 @@ _setTextColor(Error_TextView_AccessDenied, colorOnSecondary);
 	
 	public void _MaterialToast(final String _message) {
 		
+	}
+	
+	
+	public void _RippleEffects(final String _color, final View _view) {
+		android.content.res.ColorStateList clr = new android.content.res.ColorStateList(new int[][]{new int[]{}},new int[]{Color.parseColor(_color)});
+		android.graphics.drawable.RippleDrawable ripdr = new android.graphics.drawable.RippleDrawable(clr, null, null);
+		_view.setBackground(ripdr);
 	}
 	
 	public class Listview1_Backdrop_LinearLayout_Listview1Adapter extends BaseAdapter {
@@ -885,6 +889,7 @@ _setTextColor(Error_TextView_AccessDenied, colorOnSecondary);
 			cardview2.setCardElevation((float)0);
 			cardview2.setPreventCornerOverlap(true);
 			cardview2.setCardBackgroundColor(Color.TRANSPARENT);
+			_rippleRoundStroke(linear1, TSDTheme.getCurrentMaterialThemeColor(R.attr.colorPrimary,FilemanagerActivity.this), TSDTheme.getCurrentMaterialThemeColor(R.attr.colorOnPrimary,FilemanagerActivity.this), 0, 0, TSDTheme.getCurrentMaterialThemeColor(R.attr.colorPrimary,FilemanagerActivity.this));
 			
 			return _view;
 		}

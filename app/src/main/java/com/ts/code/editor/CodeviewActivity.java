@@ -219,7 +219,7 @@ public class CodeviewActivity extends AppCompatActivity {
 						editor.addView(ace_editor);
 						ace_editor.getSettings().setJavaScriptEnabled(true);
 						ace_editor.getSettings().setSupportZoom(true);
-						ace_editor.loadUrl("https://www.google.com/search?q=test ".concat(EditorPath));
+						ace_editor.loadUrl("".concat(EditorPath));
 						_closeInEditor(EditorPath);
 						{
 							HashMap<String, Object> _item = new HashMap<>();
@@ -681,12 +681,11 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 	public void _UpdateWithPath() {
 		
 		TabsDataOfFile.clear();
-		if (Tabs.contains(path)) {
-			if (!Tabs.getString(path, "").equals("")) {
-				TabsDataOfFile = new Gson().fromJson(Tabs.getString(path, ""), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+		if (FileUtil.isExistFile(path.concat("/.TS-Code-Editor/OpenedFile.json"))) {
+			if (!FileUtil.readFile(path.concat("/.TS-Code-Editor/OpenedFile.json")).equals("")) {
+				TabsDataOfFile = new Gson().fromJson(FileUtil.readFile(path.concat("/.TS-Code-Editor/OpenedFile.json")), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 			}
 		}
-		//
 		pos2 = 0;
 		for(int _repeat36 = 0; _repeat36 < (int)(TabsDataOfFile.size()); _repeat36++) {
 			if (TabsDataOfFile.get((int)pos2).containsKey("path")) {
@@ -695,7 +694,7 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 				
 				final LinearLayout ll = (LinearLayout)layout.findViewById(R.id.linear1);
 				TextView clv2 = (TextView)layout.findViewById(R.id.textview1);
-				ImageView clear = (ImageView)layout.findViewById(R.id.clear);
+				ImageView clear = (ImageView)layout.findViewById(R.id.imageview1);
 				if(ll.getParent() != null){
 						((LinearLayout)ll.getParent()).removeView(ll);
 				}
@@ -771,9 +770,9 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 	
 	public void _AddPathToTab(final String _path) {
 		TabsDataOfFile.clear();
-		if (Tabs.contains(path)) {
-			if (!Tabs.getString(path, "").equals("")) {
-				TabsDataOfFile = new Gson().fromJson(Tabs.getString(path, ""), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+		if (FileUtil.isExistFile(path.concat("/.TS-Code-Editor/OpenedFile.json"))) {
+			if (!FileUtil.readFile(path.concat("/.TS-Code-Editor/OpenedFile.json")).equals("")) {
+				TabsDataOfFile = new Gson().fromJson(FileUtil.readFile(path.concat("/.TS-Code-Editor/OpenedFile.json")), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 			}
 		}
 		checkIfAlreadyHave = false;
@@ -794,7 +793,13 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 			}
 			
 		}
-		Tabs.edit().putString(path, new Gson().toJson(TabsDataOfFile)).commit();
+		if (FileUtil.isExistFile(path.concat("/.TS-Code-Editor"))) {
+			FileUtil.writeFile(path.concat("/.TS-Code-Editor/OpenedFile.json"), new Gson().toJson(TabsDataOfFile));
+		}
+		else {
+			FileUtil.makeDir(path.concat("/.TS-Code-Editor"));
+			FileUtil.writeFile(path.concat("/.TS-Code-Editor/OpenedFile.json"), new Gson().toJson(TabsDataOfFile));
+		}
 		//
 		if (!checkIfAlreadyHave) {
 			LayoutInflater inflater = getLayoutInflater();
@@ -802,7 +807,7 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 			
 			final LinearLayout ll = (LinearLayout)layout.findViewById(R.id.linear1);
 			TextView clv2 = (TextView)layout.findViewById(R.id.textview1);
-			ImageView clear = (ImageView)layout.findViewById(R.id.clear);
+			ImageView clear = (ImageView)layout.findViewById(R.id.imageview1);
 			if(ll.getParent() != null){
 					((LinearLayout)ll.getParent()).removeView(ll);
 			}
@@ -831,9 +836,9 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 	
 	public void _removePathFromTab(final String _path) {
 		TabsDataOfFile.clear();
-		if (Tabs.contains(path)) {
-			if (!Tabs.getString(path, "").equals("")) {
-				TabsDataOfFile = new Gson().fromJson(Tabs.getString(path, ""), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
+		if (FileUtil.isExistFile(path.concat("/.TS-Code-Editor/OpenedFile.json"))) {
+			if (!FileUtil.readFile(path.concat("/.TS-Code-Editor/OpenedFile.json")).equals("")) {
+				TabsDataOfFile = new Gson().fromJson(FileUtil.readFile(path.concat("/.TS-Code-Editor/OpenedFile.json")), new TypeToken<ArrayList<HashMap<String, Object>>>(){}.getType());
 			}
 		}
 		pos2 = 0;
@@ -845,8 +850,13 @@ FileList_ListView_FileList.setAdapter(new FileList_ListView_FileListAdapter(File
 			}
 			pos2++;
 		}
-		Tabs.edit().putString(path, new Gson().toJson(TabsDataOfFile)).commit();
-		//
+		if (FileUtil.isExistFile(path.concat("/.TS-Code-Editor"))) {
+			FileUtil.writeFile(path.concat("/.TS-Code-Editor/OpenedFile.json"), new Gson().toJson(TabsDataOfFile));
+		}
+		else {
+			FileUtil.makeDir(path.concat("/.TS-Code-Editor"));
+			FileUtil.writeFile(path.concat("/.TS-Code-Editor/OpenedFile.json"), new Gson().toJson(TabsDataOfFile));
+		}
 		_closeInEditor(_path);
 	}
 	
@@ -930,7 +940,6 @@ try {
 				}
 				Editor = "Ace Editor";
 				EditorPath = _path;
-				System.out.println("Using Ace Editor");
 				LayoutInflater inflater = getLayoutInflater();
 				View layout;
 				WebView ace_editor;
@@ -964,15 +973,12 @@ try {
 			else if (_ChooseEditor().equals("Sora Editor")){
 				if (LastUsedAceEditor != null) {
 					LastUsedAceEditor.setVisibility(View.GONE);
-					System.out.println("Gone Last editor");
 				}
 				if (LastUsedSoraCodeEditor != null) {
 					LastUsedSoraCodeEditor.setVisibility(View.GONE);
-					System.out.println("Gone Last editor");
 				}
 				Editor = "Sora Editor";
 				EditorPath = _path;
-				System.out.println("Using Sora editor");
 				boolean isEditorExists = false;
 				pos2 = 0;
 				isEditorExists = false;
@@ -985,20 +991,17 @@ try {
 					pos2++;
 				}
 				if (isEditorExists) {
-					System.out.println("Editor Exists");
 					pos2 = 0;
 					for(int _repeat143 = 0; _repeat143 < (int)(EditorSession.size()); _repeat143++) {
 						if (EditorSession.get((int)pos2).containsKey("editor") && EditorSession.get((int)pos2).containsKey("path")) {
 							if (_path.equals(EditorSession.get((int)pos2).get("path").toString())) {
 								((CodeEditor)EditorSession.get((int)pos2).get("editor")).setVisibility(View.VISIBLE);
-								System.out.println("Old Visible editor");
 							}
 						}
 						pos2++;
 					}
 				}
 				else {
-					System.out.println("Editor does not exists");
 					final CodeEditor sora_editor = (CodeEditor)getLayoutInflater().inflate(R.layout.sora_code_editor,null).findViewById(R.id.CodeEditor);
 					String theme = "MaterialLight.tmTheme";
 					
