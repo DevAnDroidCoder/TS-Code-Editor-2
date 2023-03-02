@@ -81,7 +81,8 @@
 						<HorizontalScrollView
 							android:id="@+id/CodeEditorSection_ScrollView_FileTab"
 							android:layout_width="match_parent"
-							android:layout_height="wrap_content">
+							android:layout_height="wrap_content"
+							android:background="?attr/colorPrimaryContainer">
 							<LinearLayout
 								android:id="@+id/CodeEditorSection_LinearLayout_FileTab"
 								android:layout_width="match_parent"

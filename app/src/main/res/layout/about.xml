@@ -67,12 +67,6 @@
 					android:text="Join our discord server to chat,get help,report bug with us."
 					tools:replace="android:textSize,android:textColor"
 					android:textColor="?attr/colorPrimary" />
-				<ImageView
-					android:id="@+id/imageview1"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:src="@drawable/default_image"
-					android:scaleType="center" />
 				<TextView
 					android:id="@+id/textview5"
 					android:layout_width="wrap_content"

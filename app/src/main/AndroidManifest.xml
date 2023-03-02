@@ -33,8 +33,7 @@
 			android:name=".CodeviewActivity"
 			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
 			android:hardwareAccelerated="true"
-			android:supportsPictureInPicture="true"
-			android:windowSoftInputMode="stateVisible" />
+			android:supportsPictureInPicture="true" />
 		<activity
 			android:name=".SettingActivity"
 			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
