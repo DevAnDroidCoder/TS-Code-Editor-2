@@ -105,9 +105,6 @@ Glide.with(getApplicationContext()).load(Uri.parse("file:///android_asset/App/As
 				@Override
 				public void onClick(DialogInterface _dialog, int _which) {
 					if (shouldShowRequestPermissionRationale("Manifest.permission.READ_EXTERNAL_STORAGE")) {
-						_requestStoragePermission();
-					}
-					else {
 						MaterialDialog.setTitle("Storage permission required");
 						MaterialDialog.setMessage("Storage permissions is highly recommend for storing and reading files in device.Without this permission you can't use this app.");
 						MaterialDialog.setPositiveButton("Setting", new DialogInterface.OnClickListener() {
@@ -128,6 +125,9 @@ Glide.with(getApplicationContext()).load(Uri.parse("file:///android_asset/App/As
 							}
 						});
 						MaterialDialog.create().show();
+					}
+					else {
+						_requestStoragePermission();
 					}
 				}
 			});
