@@ -1,4 +1,4 @@
-# You need to add the following event to run project without breaking.
+# You need to add the following event to run the project without breaking.
 Open Sketchware pro.
 
 Go to `developer console`.
@@ -9,7 +9,7 @@ Click on `Activity events` at the top.
 
 Click on add icon.
 
-Fill the all fields by copy paste as follow or fill the fields as shown in image.
+Fill the all fields by copy paste as follow or filling in the fields as shown in the image.
 
 ---
 event name - `onStartActivityManually`
