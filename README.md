@@ -4,7 +4,7 @@ TS code editor is an Android code editor with Ace editor and Sora code editor su
 
 - [x] Sora Editor.
 	- Language Highlighting
-		- [x] Java
+		- [ ] Java
 		- [ ] XML
 		- [ ] HTML
 		- [ ] CSS

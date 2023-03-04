@@ -12,7 +12,7 @@ android {
 		minSdkVersion 21
 		targetSdkVersion 28
 		versionCode 1
-		versionName "20.1.2023 Beta1"
+		versionName "1.0 Alpha1"
 	}
 	
 	buildTypes {
