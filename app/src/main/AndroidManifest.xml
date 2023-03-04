@@ -42,12 +42,17 @@
 			android:supportsPictureInPicture="true"
 			android:screenOrientation="portrait" />
 		<activity
+			android:name=".CodeEditorActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true"
+			android:screenOrientation="portrait" />
+		<activity
 			android:name=".DebugActivity"
 			android:screenOrientation="portrait" />
 		<uses-library
 			android:name="org.apache.http.legacy"
-			android:required="false" />
-
+			android:required="false" />
 <provider
     android:name="androidx.core.content.FileProvider"
     android:authorities="com.tsd.html.website.creator.FilemanagerActivity"
@@ -58,4 +63,4 @@
         android:resource="@xml/file_paths" />
 </provider>
 	</application>
-</manifest>
+</manifest>
