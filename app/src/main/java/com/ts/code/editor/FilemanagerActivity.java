@@ -619,7 +619,7 @@ _setTextColor(Error_TextView_AccessDenied, colorOnSecondary);
 										Activities.putExtra("isInsideProject", "true");
 										Activities.putExtra("type", "project");
 										Activities.setFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-										Activities.setClass(getApplicationContext(), CodeviewActivity.class);
+										Activities.setClass(getApplicationContext(), CodeEditorActivity.class);
 										startActivity(Activities);
 									}
 								});
@@ -848,7 +848,7 @@ _setTextColor(Error_TextView_AccessDenied, colorOnSecondary);
 						if (isInsideProject) {
 							try{
 								if (Uri.parse(path.concat("/".concat(textview1.getText().toString()))).getLastPathSegment().substring((int)(Uri.parse(path.concat("/".concat(textview1.getText().toString()))).getLastPathSegment().length() - ".".concat("html").length()), (int)(Uri.parse(path.concat("/".concat(textview1.getText().toString()))).getLastPathSegment().length())).equals(".html")) {
-									Activities.setClass(getApplicationContext(), CodeviewActivity.class);
+									
 									startActivity(Activities);
 								}
 								try{

@@ -42,10 +42,11 @@ public class SettingActivity extends AppCompatActivity {
 	
 	private ScrollView vscroll1;
 	private LinearLayout linear1;
-	private LinearLayout linear_editor;
+	private LinearLayout linear3;
 	private LinearLayout linear2;
-	private TextView textview1;
-	private ImageView imageview1;
+	private LinearLayout linear4;
+	private TextView textview3;
+	private LinearLayout linear5;
 	private TextView textview2;
 	private ImageView imageview2;
 	
@@ -64,10 +65,11 @@ public class SettingActivity extends AppCompatActivity {
 	private void initialize(Bundle _savedInstanceState) {
 		vscroll1 = findViewById(R.id.vscroll1);
 		linear1 = findViewById(R.id.linear1);
-		linear_editor = findViewById(R.id.linear_editor);
+		linear3 = findViewById(R.id.linear3);
 		linear2 = findViewById(R.id.linear2);
-		textview1 = findViewById(R.id.textview1);
-		imageview1 = findViewById(R.id.imageview1);
+		linear4 = findViewById(R.id.linear4);
+		textview3 = findViewById(R.id.textview3);
+		linear5 = findViewById(R.id.linear5);
 		textview2 = findViewById(R.id.textview2);
 		imageview2 = findViewById(R.id.imageview2);
 		nt = new RequestNetwork(this);
@@ -77,13 +79,6 @@ public class SettingActivity extends AppCompatActivity {
 			public void onClick(View _view) {
 				About.setClass(getApplicationContext(), AboutActivity.class);
 				startActivity(About);
-			}
-		});
-		
-		imageview1.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View _view) {
-				
 			}
 		});
 		

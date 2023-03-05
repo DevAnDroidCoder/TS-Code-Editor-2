@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-      TS Code Editor is easy to use for starting in HTML.
+      TS Code Editor is easy to use for Android.
       </>
     ),
   },

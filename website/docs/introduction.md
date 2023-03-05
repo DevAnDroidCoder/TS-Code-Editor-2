@@ -1,6 +1,9 @@
-# TS Code Editor
-
-TS code editor is an Android code editor with Ace editor and Sora code editor support.
+---
+sidebar_position: 1
+id: Introduction
+---
+## What is TS Code Editor?
+TS Code Editor is an Android code editor made via Sketchware.
 
 - [x] Sora Editor.
 	- Language Highlighting
@@ -24,11 +27,11 @@ Join our discord server to keep yourself up-to-date about TS Code Editor.
 ### Want to improve TS Code Editor?
 Add TS Code Editor to Sketchware.
 
-Add all the [components](assets/components) to avoid errors.
+Add all the [components](https://github.com/TechnicalStudioDeveloper/TS-Code-Editor/tree/main/assets/components) to avoid errors.
 
-Add [onStartActivityManually](assets/AddEvents/AddonStartActivityManuallyEvent.md) and [OnRequestPermissionResult](assets/AddEvents/AddOnRequestPermissionResult.md) events to Sketchware.
+Add [onStartActivityManually](https://github.com/TechnicalStudioDeveloper/TS-Code-Editor/tree/main/assets/AddEvents/AddonStartActivityManuallyEvent.md) and [OnRequestPermissionResult](https://github.com/TechnicalStudioDeveloper/TS-Code-Editor/tree/main/assets/AddEvents/AddOnRequestPermissionResult.md) events to Sketchware.
 
-After following all the above steps download [project file](assets/TSCodeEditor.swb) and import it to Sketchware and make further improvements.
+After following all the above steps download [project file](https://github.com/TechnicalStudioDeveloper/TS-Code-Editor/tree/main/assets/TSCodeEditor.swb) and import it to Sketchware and make further improvements.
 
 ---
 #### Things to remember

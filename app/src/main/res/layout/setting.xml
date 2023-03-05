@@ -16,28 +16,37 @@
 			android:layout_height="match_parent"
 			android:orientation="vertical">
 			<LinearLayout
-				android:id="@+id/linear_editor"
+				android:id="@+id/linear3"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="8dp"
+				android:layout_marginLeft="30dp"
+				android:layout_marginRight="30dp"
 				android:gravity="center_vertical"
 				android:orientation="horizontal">
+				<LinearLayout
+					android:id="@+id/linear4"
+					android:layout_width="wrap_content"
+					android:layout_height="1dp"
+					android:padding="8dp"
+					android:background="#78909C"
+					android:orientation="vertical"
+					android:layout_weight="1" />
 				<TextView
-					android:id="@+id/textview1"
+					android:id="@+id/textview3"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:padding="8dp"
-					android:text="Ace editor"
-					android:layout_weight="1"
-					tools:replace="android:textSize,android:textColor"
-					android:textColor="?attr/colorPrimary" />
-				<ImageView
-					android:id="@+id/imageview1"
+					android:text="Ace Editor"
+					android:textSize="12sp"
+					android:textColor="#000000" />
+				<LinearLayout
+					android:id="@+id/linear5"
 					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:src="@drawable/ic_arrow_drop_down_black"
-					android:scaleType="center"
-					android:tint="?attr/colorPrimary" />
+					android:layout_height="1dp"
+					android:padding="8dp"
+					android:background="#78909C"
+					android:orientation="vertical"
+					android:layout_weight="1" />
 			</LinearLayout>
 			<LinearLayout
 				android:id="@+id/linear2"

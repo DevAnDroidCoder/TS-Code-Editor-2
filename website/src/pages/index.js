@@ -17,8 +17,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/download">
-            Download
+            to="/Introduction">
+            Read More
           </Link>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`TS Code Editor`}
-      description="Download Now">
+      description="TS Code Editor">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: 'TS Code Editor',
-	tagline: 'TS Code Editor is a Android code editor',
-	url: 'https://html-creator-master-kpp1akza8-technicalstudiodevelopers.vercel.app/',
+	tagline: 'TS Code Editor is an Android code editor',
+	url: 'https://ts-code-editor.vercel.app/',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -17,7 +17,7 @@ const config = {
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
 	organizationName: 'TechnicalStudioDeveloper', // Usually your GitHub org/user name.
-	projectName: 'Website-Creator', // Usually your repo name.
+	projectName: 'TS Code Editor', // Usually your repo name.
 
 	// Even if you don't use internalization, you can use this field to set useful
 	// metadata like html lang. For example, if your site is Chinese, you may want
@@ -36,14 +36,14 @@ const config = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
-					editUrl: 'https://github.com/TechnicalStudioDevelopers/Website-Creator',
+					editUrl: 'https://github.com/TechnicalStudioDeveloper/TS-Code-Editor',
 				},
-				blog: {
+				/*blog: {
 					showReadingTime: true,
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
-					editUrl: 'https://github.com/TechnicalStudioDevelopers/Website-Creator',
-				},
+					editUrl: 'https://github.com/TechnicalStudioDeveloper/TS-Code-Editor',
+				},*/
 				theme: {
 					customCss: require.resolve('./src/css/custom.css'),
 				},
@@ -55,31 +55,25 @@ const config = {
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
 			navbar: {
-				title: 'Website-Creator',
+				title: 'TS Code Editor',
 				logo: {
-					alt: 'My Site Logo',
+					alt: 'logo',
 					src: 'img/logo.jpg',
 				},
 				items: [
 					{
 						type: 'doc',
-						docId: 'doc1/intro',
+						docId: 'Introduction',
 						position: 'left',
-						label: 'Tutorial',
-          },
-          {
-          	type:'doc',
-          	docId:'doc2/download',
-          	position:'left',
-          	label:'Download',
+						label: 'Introduction',
           },
 					{
-						to: '/blog',
-						label: 'Blog',
-						position: 'left'
-					},
+						href: '/download',
+						position: 'left',
+						label: 'Download',
+          },
 					{
-						href: 'https://github.com/TechnicalStudioDevelopers/Website-Creator',
+						href: 'https://github.com/TechnicalStudioDeveloper/TS-Code-Editor',
 						label: 'GitHub',
 						position: 'right',
           },
@@ -89,15 +83,6 @@ const config = {
 				style: 'dark',
 				links: [
 					{
-						title: 'Docs',
-						items: [
-							{
-								label: 'Tutorial',
-								to: '/docs/doc1/intro',
-              },
-            ],
-          },
-					{
 						title: 'Community',
 						items: [
 							{
@@ -106,7 +91,7 @@ const config = {
               },
 							{
 								label: 'Discord',
-								href: 'https://discord.gg/xG7Y6buT',
+								href: 'https://discord.gg/RM5qaZs4kd',
               },
 							{
 								label: 'Facebook',
@@ -117,18 +102,18 @@ const config = {
 					{
 						title: 'More',
 						items: [
-							{
+							/*{
 								label: 'Blog',
 								to: '/blog',
-              },
+              },*/
 							{
 								label: 'GitHub',
-								href: 'https://github.com/TechnicalStudioDevelopers/Website-Creator',
+								href: 'https://github.com/TechnicalStudioDeveloper/TS-Code-Editor',
               },
             ],
           },
         ],
-				copyright: `Copyright © ${new Date().getFullYear()} TS Code Editor, Inc. Built with Docusaurus.`,
+				copyright: `Copyright © ${new Date().getFullYear()} TechnicalStudioDeveloper, Inc. Built with Docusaurus.`,
 			},
 			prism: {
 				theme: lightCodeTheme,
